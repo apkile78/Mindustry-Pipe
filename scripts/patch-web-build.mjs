@@ -5,7 +5,8 @@ import { fileURLToPath } from 'node:url';
 
 const root = dirname(dirname(fileURLToPath(import.meta.url)));
 const args = new Map(process.argv.slice(2).map((arg, index, all) => arg.startsWith('--') ? [arg, all[index + 1]] : []));
-const input = join(root, args.get('--input') || process.env.WEB_INPUT_DIR || 'legacy-web');
+const defaultInput = await exists(join(root, 'legacy-web')) ? 'legacy-web' : 'examples/legacy-web';
+const input = join(root, args.get('--input') || process.env.WEB_INPUT_DIR || defaultInput);
 const out = join(root, args.get('--out') || process.env.WEB_DIST_DIR || 'dist');
 const textExts = new Set(['.html', '.js', '.css', '.json', '.txt', '.xml', '.atlas', '.properties']);
 
