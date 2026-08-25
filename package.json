@@ -1,0 +1,10 @@
+{
+  "name": "mindustry-pipe",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:web": "node scripts/patch-web-build.mjs",
+    "check": "node scripts/patch-web-build.mjs --input examples/legacy-web --out build/check-dist"
+  }
+}
