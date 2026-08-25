@@ -21,9 +21,6 @@ jobs:
         with:
           node-version: 22
       - run: npm run build:web
-        env:
-          WEB_INPUT_DIR: legacy-web
-          WEB_DIST_DIR: dist
       - name: Publish to gh-pages
         uses: peaceiris/actions-gh-pages@v4
         with:

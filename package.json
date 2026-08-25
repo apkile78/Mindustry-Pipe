@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "build:web": "node scripts/patch-web-build.mjs",
+    "build:legacy": "node scripts/patch-web-build.mjs --input legacy-web --out dist",
     "check": "node scripts/patch-web-build.mjs --input examples/legacy-web --out build/check-dist"
   }
 }

@@ -12,10 +12,16 @@ This repository contains a static-build modernization pipeline for legacy Mindus
 
 ## Usage
 
-Place a legacy export in `legacy-web`, then run:
+Place a real Mindustry web export in `legacy-web`, then run:
 
 ```bash
 npm run build:web
+```
+
+If `legacy-web` is not present, `build:web` falls back to the included `examples/legacy-web` smoke-test export so CI can validate the patch pipeline before the real game artifact is committed or generated. To require a real export and fail when it is missing, run:
+
+```bash
+npm run build:legacy
 ```
 
 The patched site is written to `dist` by default. Override paths when needed:
